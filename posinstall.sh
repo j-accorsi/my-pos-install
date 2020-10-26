@@ -28,9 +28,15 @@ to_install=(
   npm
   easytag
   obs-studio
+  libclang-dev
+  flatpak
 )
 
 ###################################################################################################
+# Remove lock apt
+sudo rm /var/lib/dpkg/lock-frontend
+sudo rm /var/cache/apt/archives/lock
+
 # Add architecture 32 bits for wine
 sudo dpkg --add-architecture i386
 
