@@ -55,7 +55,7 @@ sudo apt install --install-recommends winehq-stable
 # Install all apt
 for name in ${to_install[@]} 
 do
-    apt install "$name" -y
+    sudo apt install "$name" -y
 done
 
 # Dowloads packages .deb
