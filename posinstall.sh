@@ -47,7 +47,6 @@ sudo apt update -y
 sudo apt install --install-recommends winehq-stable
 
 # Install all apt
-# Instalar programas no apt
 for name in ${to_install[@]} 
 do
     apt install "$name" -y
