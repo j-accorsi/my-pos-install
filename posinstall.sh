@@ -90,6 +90,7 @@ cp $dir_dowloads/ClipGrab-3.8.14-x86_64.AppImage $dir_app
 cp $dir_dowloads/Clipgrab-logo-ikonoa.png $dir_app
 
 # Install web app to whatsapp
+cd $dir_app
 sudo nativefier --name "WhatsApp" "https://web.whatsapp.com/"
 cd
 
@@ -105,7 +106,9 @@ fi
 
 # Executables
 exec_clipgrab="$HOME/.apps/ClipGrab-3.8.14-x86_64.AppImage"
+chmod +x $HOME/.apps/ClipGrab-3.8.14-x86_64.AppImage
 exec_whatsapp="$HOME/.apps/WhatsApp-linux-x64/WhatsApp"
+chmod +x $HOME/.apps/WhatsApp-linux-x64/WhatsApp
 
 # Icon 
 icon_clipgrab="$HOME/.apps/Clipgrab-logo-ikonoa.png"
