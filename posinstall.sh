@@ -48,9 +48,9 @@ sudo apt install --install-recommends winehq-stable
 
 # Install all apt
 # Instalar programas no apt
-for to_install in ${to_install[@]} 
+for name in ${to_install[@]} 
 do
-    apt install "$to_install" -y
+    apt install "$name" -y
 done
 
 # Dowloads packages .deb
