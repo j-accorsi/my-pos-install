@@ -61,10 +61,10 @@ wget "$url_onlyoffice"
 wget "$url_flatpak_stremio"
 wget "$url_appimage_clipgrap"
 wget "$url_icon_clipgrab"
-cd
 
 # Install all packages .deb
 sudo dpkg -i *.deb
+cd
 
 # Install Stremio
 sudo flatpak install Stremio+4.4.116.flatpak
