@@ -44,7 +44,7 @@ sudo dpkg --add-architecture i386
 sudo apt-add-repository "$ppa_lutris" -y
 wget -nc "$url_wine_key"
 sudo apt-key add winehq.key
-sudo apt-add-repository "deb $url_wine_key focal main" -y
+sudo apt-add-repository "deb $url_ppa_wine focal main" -y
 
 # Updating repositories
 sudo apt update -y
