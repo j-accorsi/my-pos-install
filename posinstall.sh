@@ -23,7 +23,7 @@ to_install=(
   virtualbox
   lutris
   synaptic
-  pip3
+  python3-pip
   nodejs
   npm
   easytag
@@ -72,7 +72,7 @@ sudo dpkg -i *.deb
 cd
 
 # Install Stremio
-sudo flatpak install Stremio+4.4.116.flatpak
+sudo flatpak install $dir_dowloads/Stremio+4.4.116.flatpak
 
 # Install nativefier
 sudo npm install nativefier -g
@@ -139,7 +139,7 @@ Terminal=0
 TerminalOptions=
 Type=Application" > "$HOME/.local/share/applications/WhatsApp.desktop"
 
-
+rm -r $dir_dowloads
 ###################################################################################################
 # Update and upgrade
 sudo apt update && sudo apt dist-upgrade -y
