@@ -46,6 +46,13 @@ sudo apt update -y
 # Install wine
 sudo apt install --install-recommends winehq-stable
 
+# Install all apt
+# Instalar programas no apt
+for to_install in ${to_install[@]} 
+do
+    apt install "$to_install" -y
+done
+
 # Dowloads packages .deb
 mkdir "$dir_dowloads"
 cd $dir_dowloads
@@ -61,13 +68,6 @@ sudo dpkg -i *.deb
 
 # Install Stremio
 sudo flatpak install Stremio+4.4.116.flatpak
-
-# Install all apt
-# Instalar programas no apt
-for to_install in ${to_install[@]} 
-do
-    apt install "$to_install" -y
-done
 
 # Install nativefier
 sudo npm install nativefier -g
