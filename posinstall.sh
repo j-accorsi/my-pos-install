@@ -1,22 +1,34 @@
 #!/usr/bin/env bash
-# variables
+# ppa
 ppa_lutris="ppa:lutris-team/lutris"
 
+# wine key and ppa
 url_wine_key="https://dl.winehq.org/wine-builds/winehq.key"
 url_ppa_wine="https://dl.winehq.org/wine-builds/ubuntu/"
+
+# url's
 url_rstudio="https://download1.rstudio.org/desktop/bionic/amd64/rstudio-1.3.1093-amd64.deb"
 url_onlyoffice="https://download.onlyoffice.com/install/desktop/editors/linux/old/onlyoffice-desktopeditors_amd64.deb?_ga=2.172857315.1532461283.1603720995-364841503.1600905442"
 url_flatpak_stremio="https://dl.strem.io/shell-linux/v4.4.116/Stremio+4.4.116.flatpak"
 url_appimage_clipgrap="https://download.clipgrab.org/ClipGrab-3.8.14-x86_64.AppImage"
-
 url_icon_clipgrab="https://upload.wikimedia.org/wikipedia/commons/7/72/Clipgrab-logo-ikonoa.png"
 
+# Directories
 dir_dowloads="$HOME/Downloads/programs"
 dir_app="$HOME/.apps"
 dir_desktop="$HOME.local/share/applications/"
 
+# url's dowload
+url_to_dowload=(
+  "$url_rstudio"
+  "$url_onlyoffice"
+  "$url_flatpak_stremio"
+  "$url_appimage_clipgrap"
+  "$url_icon_clipgrab"
+)
+
 # apt's list
-to_install=(
+apt_to_install=(
   snapd
   r-base
   telegram-desktop
@@ -53,7 +65,7 @@ sudo apt update -y
 sudo apt install --install-recommends winehq-stable
 
 # Install all apt
-for name in ${to_install[@]} 
+for name in ${apt_to_install[@]} 
 do
     sudo apt install "$name" -y
 done
@@ -61,11 +73,11 @@ done
 # Dowloads packages .deb
 mkdir "$dir_dowloads"
 cd $dir_dowloads
-wget "$url_rstudio"
-wget "$url_onlyoffice"
-wget "$url_flatpak_stremio"
-wget "$url_appimage_clipgrap"
-wget "$url_icon_clipgrab"
+for url in ${url_to_dowload[@]} 
+do
+  wget "$url"
+done
+
 
 # Install all packages .deb
 sudo dpkg -i *.deb
@@ -140,6 +152,7 @@ TerminalOptions=
 Type=Application" > "$HOME/.local/share/applications/WhatsApp.desktop"
 
 rm -r $dir_dowloads
+
 ###################################################################################################
 # Update and upgrade
 sudo apt update && sudo apt dist-upgrade -y
