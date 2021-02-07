@@ -8,10 +8,12 @@ url_ppa_wine="https://dl.winehq.org/wine-builds/ubuntu/"
 
 # url's
 url_rstudio="https://download1.rstudio.org/desktop/bionic/amd64/rstudio-1.3.1093-amd64.deb"
-url_onlyoffice="https://download.onlyoffice.com/install/desktop/editors/linux/old/onlyoffice-desktopeditors_amd64.deb?_ga=2.172857315.1532461283.1603720995-364841503.1600905442"
+#url_onlyoffice="https://download.onlyoffice.com/install/desktop/editors/linux/old/onlyoffice-desktopeditors_amd64.deb?_ga=2.172857315.1532461283.1603720995-364841503.1600905442"
 url_flatpak_stremio="https://dl.strem.io/shell-linux/v4.4.116/Stremio+4.4.116.flatpak"
 url_appimage_clipgrap="https://download.clipgrab.org/ClipGrab-3.8.14-x86_64.AppImage"
 url_icon_clipgrab="https://upload.wikimedia.org/wikipedia/commons/7/72/Clipgrab-logo-ikonoa.png"
+url_vivaldi="https://downloads.vivaldi.com/stable/vivaldi-stable_3.6.2165.36-1_amd64.deb"
+
 
 # Directories
 dir_dowloads="$HOME/Downloads/programs"
@@ -21,7 +23,8 @@ dir_desktop="$HOME.local/share/applications/"
 # url's dowload
 url_to_dowload=(
   "$url_rstudio"
-  "$url_onlyoffice"
+  #"$url_onlyoffice"
+  "$url_vivaldi"
   "$url_flatpak_stremio"
   "$url_appimage_clipgrap"
   "$url_icon_clipgrab"
@@ -42,6 +45,11 @@ apt_to_install=(
   obs-studio
   libclang-dev
   flatpak
+  inkscape
+  gimp
+  xournal
+  boxes
+  kdenlive
 )
 
 ###################################################################################################
